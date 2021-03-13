@@ -31,6 +31,15 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
+	
+# GBoard themes
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/gboard/timmah.zip:system/etc/gboard/timmah.zip
+
+# Set Pixel blue light MD2 theme on Gboard
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.ime.themes_dir=/system/etc/gboard \
+    ro.com.google.ime.theme_file=timmah.zip
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
